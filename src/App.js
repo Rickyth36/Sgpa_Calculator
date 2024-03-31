@@ -2,7 +2,7 @@ import Hero from "./components/Hero";
 
 function App() {
   return (
-    <div className="bg-dark h-screen font-sora">
+    <div className="bg-dark h-screen  font-sora">
       <Hero/>
     </div>
   );

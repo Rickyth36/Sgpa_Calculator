@@ -7,8 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'dark':'#212121'
+        'dark': '#212121',
+        'bluee': '#9381ff',
+        'grayy': '#141414'
       },
+      
       fontFamily: {
         sora:[ "Sora", "sans-serif"]
       }
