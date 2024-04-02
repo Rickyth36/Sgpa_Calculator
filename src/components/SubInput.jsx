@@ -1,21 +1,33 @@
 import React from 'react'
 import { useState } from 'react';
 
-const SubInput = ({ title, id, Prod }) => {
+const SubInput = ({ title, id, onProdChange }) => {
   const [grade, setGrade] = useState(0);
   const [credit, setCredit] = useState(0);
   const [prod, setProd] = useState(0);
   function handleGradeChange(event) {
     const gradeValue = parseInt(event.target.value);
-    setGrade(gradeValue);
-    setProd(gradeValue * credit);
+    if (isNaN(gradeValue) || gradeValue===null ) {
+      setGrade(0);
+      setProd(0);
+      onProdChange(0);
+    }
+      setGrade(gradeValue);
+      setProd(gradeValue * credit);
+      onProdChange(gradeValue * credit);
   }
   function handleCreditChange(event) {
     const creditValue = parseInt(event.target.value);
-    setCredit(creditValue);
-    setProd(grade * creditValue);
+    if (isNaN(creditValue) || creditValue===null ) {
+      setCredit(0);
+      setProd(0);
+      onProdChange(0);
+      
+    }
+      setCredit(creditValue);
+      setProd(grade * creditValue);
+      onProdChange(grade * creditValue);
   }
-   Prod = prod;
   return (
     <div className='bg-grayy p-5 rounded-lg w-full'>
       <h3 className='text-md md:text-lg font-semibold text-green-400 text-shadow-lg'>{title}</h3>
@@ -27,7 +39,7 @@ const SubInput = ({ title, id, Prod }) => {
         <label for={id} className='text-sm md:text-base text-blue-400 font-semibold' >Credit score</label>
         <input onChange={handleCreditChange} className='rounded-lg border-shadow-lg border border-dark w-full md:w-[70%] p-2 placeholder:text-xs' id={id} placeholder='Credit score ' type='number'></input>
       </div>
-      <p>{Prod }</p>
+      <p>{ prod}</p>
     </div>
   )
 }
