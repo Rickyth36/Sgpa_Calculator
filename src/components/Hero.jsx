@@ -20,18 +20,19 @@ const Hero = () => {
   }
 
   const updateTotalProd = (val) => {
-    for (let i = 1; i <= subNo; i++){
-      
-      setSumOProd(0);
-      setSumOProd(sumOProd + val);
+    if (isNaN(sumOProd) || isNaN(val)) {
+      setSumOProd(0)
     }
+      setSumOProd(sumOProd+val)
   }
 
   const showSGPA = () => {
+    setSumOProd(sumOProd);
     if(isNaN(sgpa)){
       setSgpa(0)
     }
     setSgpa(sumOProd / totalcredit);
+    
   }
   
   const subComponents = [];
@@ -92,8 +93,8 @@ const Hero = () => {
       </div>
       {subNo > 0 ? <button class="codepen-button" onClick={showSGPA} ><span>Calculate SGPA</span></button> : ""}
       <div>
-         <h1 className='text-2xl text-white font-semibold'>{sumOProd}</h1>
-         <h1 className='text-2xl text-white font-semibold'>{sgpa}</h1>
+         {/**<h1 className='text-2xl text-white font-semibold'>{sumOProd}</h1>**/}
+         <h1 className='text-2xl text-white font-semibold'>Sgpa: {sgpa}</h1>
          
       </div>
     </div>

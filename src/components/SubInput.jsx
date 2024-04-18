@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react';
-
 const SubInput = ({ title, id, onProdChange }) => {
   const [grade, setGrade] = useState(0);
   const [credit, setCredit] = useState(0);
