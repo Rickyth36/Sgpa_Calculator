@@ -27,6 +27,10 @@ const SubInput = ({ title, id, onProdChange }) => {
       setProd(grade * creditValue);
       onProdChange(grade * creditValue);
   }
+
+  console.log("grade",grade);
+  console.log("credit",credit);
+  console.log("prod",prod);
   return (
     <div className='bg-grayy p-5 rounded-lg w-full'>
       <h3 className='text-md md:text-lg font-semibold text-green-400 text-shadow-lg'>{title}</h3>
