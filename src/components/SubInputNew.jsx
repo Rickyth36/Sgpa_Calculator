@@ -27,7 +27,7 @@ const SubInputNew = ({ title, id, values, setValues }) => {
         {/*<label className='text-sm md:text-base text-bluee font-semibold' >Grade</label>
         <input value={values[id].grade} onChange={handleGradeChange} className='rounded-lg border-shadow-lg border border-dark w-full md:w-[70%] p-2 placeholder:text-xs' placeholder='Grade ' type='number'></input>
         */}
-        <label for="grade" className='text-sm md:text-base text-blue-400 font-semibold'>Enter your grade:</label>
+        <label for="grade" className='text-sm md:text-base text-blue-400 font-semibold'>Grade:</label>
         <select className='rounded-lg p-2 w-[90%] md:w-[80%]' name="grade" id="grade" onChange={handleGradeChange}>
           <option value="">Choose your grade</option>
           <option value="10">A+</option>
@@ -41,9 +41,17 @@ const SubInputNew = ({ title, id, values, setValues }) => {
       </div>
       <div className='flex flex-col mt-1 '>
         <label className='text-sm md:text-base text-blue-400 font-semibold' >Credit score</label>
-        <input value={values[id].credit} onChange={handleCreditChange} className='rounded-lg border-shadow-lg border border-dark w-[90%] md:w-[80%] p-2 placeholder:text-xs' placeholder='Credit score ' type='number'></input>
+        {/*<input value={values[id].credit} onChange={handleCreditChange} className='rounded-lg border-shadow-lg border border-dark w-[90%] md:w-[80%] p-2 placeholder:text-xs' placeholder='Credit score ' type='number'></input>*/}
+        <select className='rounded-lg p-2 w-[90%] md:w-[80%]' name="credit" id="credit" onChange={handleCreditChange}>
+          <option value="">Choose credit score</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
       </div>
-      {/*<p className='text-white'>{values[id].grade * values[id].credit}</p>*/}
     </div>
   )
 }

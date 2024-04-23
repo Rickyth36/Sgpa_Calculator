@@ -62,7 +62,7 @@ const Hero = () => {
           alert("Please enter a valid grade")
           return
         }
-        if (item.credit === "") {
+        if (item.credit == "") {
           alert("Please enter a valid credit")
           return
         }
